@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "emporous-pip"
+version = "0.1.0"
+description = ""
+authors = ["d10n <d10n@redhat.com>"]
+readme = "README.md"
+packages = [{include = "emporous_pip"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+grpcio = "^1.50.0"
+protobuf = "^4.21.9"
+grpcio-tools = "^1.50.0"
+docker = "^6.0.1"
+bottle = "^0.12.23"
+
+[tool.poetry.scripts]
+emporous_pip_index = 'emporous_pip.emporous_pip_index:main'
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
