@@ -28,6 +28,8 @@ import grpc
 from generated import manager_pb2_grpc
 from generated.manager_pb2_grpc import CollectionManagerStub
 
+reference = "localhost:5000/demo/pyindex:latest"
+
 # os.getenv("EXTRA_INDEX_URL")
 # os.getenv("INDEX_URL")
 
@@ -85,7 +87,6 @@ class EmporousPipHttpRequestHandler(http.server.BaseHTTPRequestHandler):
         print(self.path)
         path_parsed = urllib.parse.urlparse(self.path)
 
-        reference = "localhost:5000/test/pyindex:latest"
         auth_config = create_auth_config(reference)
 
         # render web root redirect

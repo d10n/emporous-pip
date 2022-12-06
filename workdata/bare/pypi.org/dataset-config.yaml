@@ -26,9 +26,9 @@ collection:
     - file: 'isodate/*.tar.gz'
       attributes:
         package: 'isodate'
-    - file: 'pymetronome/*.whl'
+    - file: 'vimetronome/*.whl'
       attributes:
-        package: 'pymetronome'
-    - file: 'pymetronome/*.tar.gz'
+        package: 'vimetronome'
+    - file: 'vimetronome/*.tar.gz'
       attributes:
-        package: 'pymetronome'
+        package: 'vimetronome'
