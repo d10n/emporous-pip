@@ -14,27 +14,18 @@ collection:
     - file: 'bottle/*.tar.gz'
       attributes:
         package: 'bottle'
-#    - file: 'bottle/index.html'
-#      attributes:
-#        package: 'bottle'
     - file: 'iniconfig/*.whl'
       attributes:
         package: 'iniconfig'
     - file: 'iniconfig/*.tar.gz'
       attributes:
         package: 'iniconfig'
-#    - file: 'iniconfig/index.html'
-#      attributes:
-#        package: 'iniconfig'
     - file: 'isodate/*.whl'
       attributes:
         package: 'isodate'
     - file: 'isodate/*.tar.gz'
       attributes:
         package: 'isodate'
-#    - file: 'isodate/index.html'
-#      attributes:
-#        package: 'isodate'
     - file: 'pymetronome/*.whl'
       attributes:
         package: 'pymetronome'
