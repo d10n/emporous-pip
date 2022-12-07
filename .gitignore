@@ -3,3 +3,8 @@ __pycache__/
 /dist
 
 #/workdata
+
+/demo/output
+!/demo/output/.gitkeep
+
+/demo/dist
