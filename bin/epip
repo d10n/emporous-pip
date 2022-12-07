@@ -1,0 +1,18 @@
+#!/bin/bash
+
+export PIP_EXTRA_INDEX_URL='http://127.0.0.1:8089'
+export EMPOROUS_SOCKET_ADDRESS=/tmp/emporous.sock
+
+uor serve "$EMPOROUS_SOCKET_ADDRESS" --plain-http &>/tmp/emporous-grpc-server.log &
+grpc_server_pid=$!
+
+emporous_pip_index &>/tmp/emporous-pip-index.log &
+pip_index_pid=$!
+
+pip "$@"
+code=$?
+
+kill $pip_index_pid
+kill $grpc_server_pid
+
+exit $code
