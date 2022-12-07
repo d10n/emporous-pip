@@ -2,4 +2,4 @@
 
 set -x
 
-uor push --plain-http localhost:5000/demo/pyindex:latest
+uor-client-go push --plain-http localhost:5000/demo/pyindex:latest
