@@ -1,0 +1,39 @@
+
+# Try running these commands from within the demo Docker container:
+
+# Start the registry in the background
+registry serve /projects/config-dev.yml &>/dev/null &
+containerd &>/dev/null &
+
+# Prepare the packages to push to our emporous index
+cd workdata/pip-index
+./generate-dataset-config.py >dataset-config.yaml
+
+# Build and push our package collection to emporous
+./build-collection.sh
+./push-collection.sh
+
+# Create an example project workspace
+mkdir ~/myproject
+cd ~/myproject
+virtualenv venv
+. ./venv/bin/activate
+
+# Observe that vimetronome is not on the public index
+pip index versions vimetronome
+
+# Observe that vimetronome is available in emporous,
+# using the `epip` pip wrapper
+epip index versions vimetronome
+
+# Install vimetronome from emporous
+epip install vimetronome
+which -a vimetronome
+vimetronome --help
+
+# Mount our index collection as a filesystem
+uor-fuse-go mount --plain-http localhost:5000/demo/pyindex:latest /mnt &>/tmp/fuse.log &
+
+# Inspect the emporous metadata that is exposed by the mounted filesystem
+getfattr -d /mnt/iniconfig/iniconfig-1.1.1.tar.gz
+

@@ -28,3 +28,5 @@ Use:
 ./demo/build-demo.sh demo/Dockerfile epip-demo
 ./demo/run-demo.sh epip-demo
 ```
+
+A manual script with step-by-step commands you can use to try out epip in the docker container is in `demo/try-me.txt`
