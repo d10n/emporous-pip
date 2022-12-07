@@ -68,6 +68,7 @@ for root, dirs, files in os.walk('./simple'):
                 filtered_meta = {
                     k: json.dumps(v) if not isinstance(v, (bool, int, float, str)) else v
                         for k, v in filtered_meta.items()}
+                filtered_meta['package'] = filtered_meta['name']
 
                 dataset_config['collection']['files'].extend([
                     {
