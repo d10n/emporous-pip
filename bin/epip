@@ -1,6 +1,13 @@
 #!/bin/bash
 
-export PIP_EXTRA_INDEX_URL='http://127.0.0.1:8089'
+export PIP_INDEX_URL='http://127.0.0.1:8089' # emporous
+export PIP_EXTRA_INDEX_URL='https://pypi.org/simple' # official pypi
+
+# if EMPOROUS_ONLY is set, then clear PIP_EXTRA_INDEX_URL
+if [[ -n "${EMPOROUS_ONLY+x}" ]]; then
+export PIP_EXTRA_INDEX_URL=
+fi
+
 export EMPOROUS_SOCKET_ADDRESS=/tmp/emporous.sock
 
 uor serve "$EMPOROUS_SOCKET_ADDRESS" --plain-http &>/tmp/emporous-grpc-server.log &
