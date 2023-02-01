@@ -30,21 +30,21 @@ mkdir /projects
 cd /projects
 
 # Demo prep: Clone and build Emporous client
-git clone https://github.com/d10n/uor-client-go.git -b feat/grpc-list-read
+git clone https://github.com/d10n/emporous-go.git -b feat/grpc-list-read
 (
-cd uor-client-go
-! [[ -e /workdir/demo/vendor-uor-client-go ]] || mv /workdir/demo/vendor-uor-client-go vendor
+cd emporous-go
+! [[ -e /workdir/demo/vendor-emporous-go ]] || mv /workdir/demo/vendor-emporous-go vendor
 make build
-cp bin/uor-client-go /usr/local/bin/
+cp bin/emporous /usr/local/bin/
 )
 
 # Demo prep: Clone and build Emporous fuse driver
-git clone https://github.com/d10n/uor-fuse-go.git
+git clone https://github.com/emporous-community/emporous-fuse-go.git
 (
-cd uor-fuse-go
-! [[ -e /workdir/demo/vendor-uor-fuse-go ]] || mv /workdir/demo/vendor-uor-fuse-go vendor
+cd emporous-fuse-go
+! [[ -e /workdir/demo/vendor-emporous-fuse-go ]] || mv /workdir/demo/vendor-emporous-fuse-go vendor
 make build
-cp bin/uor-fuse-go /usr/local/bin/
+cp bin/emporous-fuse /usr/local/bin/
 )
 
 

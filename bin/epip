@@ -10,7 +10,7 @@ fi
 
 export EMPOROUS_SOCKET_ADDRESS=/tmp/emporous.sock
 
-uor-client-go serve "$EMPOROUS_SOCKET_ADDRESS" --plain-http &>/tmp/emporous-grpc-server.log &
+emporous serve "$EMPOROUS_SOCKET_ADDRESS" --plain-http &>/tmp/emporous-grpc-server.log &
 grpc_server_pid=$!
 
 emporous_pip_index &>/tmp/emporous-pip-index.log &

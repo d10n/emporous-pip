@@ -14,54 +14,54 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rmanager.proto\x12\x07manager\x1a\x1cgoogle/protobuf/struct.proto\"\x8e\x01\n\nDiagnostic\x12.\n\x08severity\x18\x01 \x01(\x0e\x32\x1c.manager.Diagnostic.Severity\x12\x0f\n\x07summary\x18\x02 \x01(\t\x12\x0e\n\x06\x64\x65tail\x18\x03 \x01(\t\"/\n\x08Severity\x12\x0b\n\x07INVALID\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07WARNING\x10\x02\"\xcc\x01\n\x04List\x1a\x65\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\'\n\x06\x66ilter\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\x12!\n\x04\x61uth\x18\x03 \x01(\x0b\x32\x13.manager.AuthConfig\x1a]\n\x08Response\x12\'\n\ncollection\x18\x01 \x01(\x0b\x32\x13.manager.Collection\x12(\n\x0b\x64iagnostics\x18\x02 \x03(\x0b\x32\x13.manager.Diagnostic\"\xcd\x01\n\x08Retrieve\x1az\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\'\n\x06\x66ilter\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\x12!\n\x04\x61uth\x18\x04 \x01(\x0b\x32\x13.manager.AuthConfig\x1a\x45\n\x08Response\x12\x0f\n\x07\x64igests\x18\x01 \x03(\t\x12(\n\x0b\x64iagnostics\x18\x02 \x03(\x0b\x32\x13.manager.Diagnostic\"\xa3\x01\n\tReadLayer\x1aQ\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0blayer_title\x18\x02 \x01(\t\x12!\n\x04\x61uth\x18\x03 \x01(\x0b\x32\x13.manager.AuthConfig\x1a\x43\n\x08Response\x12\'\n\ndiagnostic\x18\x01 \x01(\x0b\x32\x13.manager.Diagnostic\x12\x0e\n\x06\x62inary\x18\x02 \x01(\x0c\"\xdd\x01\n\x0fReadLayerStream\x1az\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\'\n\x06\x66ilter\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\x12!\n\x04\x61uth\x18\x04 \x01(\x0b\x32\x13.manager.AuthConfig\x1aN\n\x08Response\x12)\n\ndiagnostic\x18\x01 \x01(\x0b\x32\x13.manager.DiagnosticH\x00\x12\x0f\n\x05\x63hunk\x18\x02 \x01(\x0cH\x00\x42\x06\n\x04\x64\x61ta\"\xcb\x01\n\x07Publish\x1az\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\'\n\ncollection\x18\x03 \x01(\x0b\x32\x13.manager.Collection\x12!\n\x04\x61uth\x18\x04 \x01(\x0b\x32\x13.manager.AuthConfig\x1a\x44\n\x08Response\x12\x0e\n\x06\x64igest\x18\x01 \x01(\t\x12(\n\x0b\x64iagnostics\x18\x02 \x03(\x0b\x32\x13.manager.Diagnostic\"^\n\nCollection\x12\x16\n\x0eschema_address\x18\x01 \x01(\t\x12\x1a\n\x12linked_collections\x18\x02 \x03(\t\x12\x1c\n\x05\x66iles\x18\x03 \x03(\x0b\x32\r.manager.File\"A\n\x04\x46ile\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\x12+\n\nattributes\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"u\n\nAuthConfig\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x16\n\x0eserver_address\x18\x03 \x01(\t\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x04 \x01(\t\x12\x15\n\rrefresh_token\x18\x05 \x01(\t2\xb0\x02\n\x11\x43ollectionManager\x12>\n\x0bListContent\x12\x15.manager.List.Request\x1a\x16.manager.List.Response\"\x00\x12G\n\x0ePublishContent\x12\x18.manager.Publish.Request\x1a\x19.manager.Publish.Response\"\x00\x12J\n\x0fRetrieveContent\x12\x19.manager.Retrieve.Request\x1a\x1a.manager.Retrieve.Response\"\x00\x12\x46\n\tReadLayer\x12\x1a.manager.ReadLayer.Request\x1a\x1b.manager.ReadLayer.Response\"\x00\x42PZNgithub.com/uor-framework/uor-client-go/api/services/collectionmanager/v1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rmanager.proto\x12\x07manager\x1a\x1cgoogle/protobuf/struct.proto\"\xad\x01\n\nDiagnostic\x12.\n\x08severity\x18\x01 \x01(\x0e\x32\x1c.manager.Diagnostic.Severity\x12\x0f\n\x07summary\x18\x02 \x01(\t\x12\x0e\n\x06\x64\x65tail\x18\x03 \x01(\t\"N\n\x08Severity\x12\x18\n\x14SEVERITY_UNSPECIFIED\x10\x00\x12\x12\n\x0eSEVERITY_ERROR\x10\x01\x12\x14\n\x10SEVERITY_WARNING\x10\x02\"\xcc\x01\n\x04List\x1a\x65\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\'\n\x06\x66ilter\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\x12!\n\x04\x61uth\x18\x03 \x01(\x0b\x32\x13.manager.AuthConfig\x1a]\n\x08Response\x12\'\n\ncollection\x18\x01 \x01(\x0b\x32\x13.manager.Collection\x12(\n\x0b\x64iagnostics\x18\x02 \x03(\x0b\x32\x13.manager.Diagnostic\"\xcd\x01\n\x08Retrieve\x1az\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\'\n\x06\x66ilter\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\x12!\n\x04\x61uth\x18\x04 \x01(\x0b\x32\x13.manager.AuthConfig\x1a\x45\n\x08Response\x12\x0f\n\x07\x64igests\x18\x01 \x03(\t\x12(\n\x0b\x64iagnostics\x18\x02 \x03(\x0b\x32\x13.manager.Diagnostic\"\xa3\x01\n\tReadLayer\x1aQ\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0blayer_title\x18\x02 \x01(\t\x12!\n\x04\x61uth\x18\x03 \x01(\x0b\x32\x13.manager.AuthConfig\x1a\x43\n\x08Response\x12\'\n\ndiagnostic\x18\x01 \x01(\x0b\x32\x13.manager.Diagnostic\x12\x0e\n\x06\x62inary\x18\x02 \x01(\x0c\"\xdd\x01\n\x0fReadLayerStream\x1az\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\'\n\x06\x66ilter\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\x12!\n\x04\x61uth\x18\x04 \x01(\x0b\x32\x13.manager.AuthConfig\x1aN\n\x08Response\x12)\n\ndiagnostic\x18\x01 \x01(\x0b\x32\x13.manager.DiagnosticH\x00\x12\x0f\n\x05\x63hunk\x18\x02 \x01(\x0cH\x00\x42\x06\n\x04\x64\x61ta\"\xcb\x01\n\x07Publish\x1az\n\x07Request\x12\x0e\n\x06source\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65stination\x18\x02 \x01(\t\x12\'\n\ncollection\x18\x03 \x01(\x0b\x32\x13.manager.Collection\x12!\n\x04\x61uth\x18\x04 \x01(\x0b\x32\x13.manager.AuthConfig\x1a\x44\n\x08Response\x12\x0e\n\x06\x64igest\x18\x01 \x01(\t\x12(\n\x0b\x64iagnostics\x18\x02 \x03(\x0b\x32\x13.manager.Diagnostic\"^\n\nCollection\x12\x16\n\x0eschema_address\x18\x01 \x01(\t\x12\x1a\n\x12linked_collections\x18\x02 \x03(\t\x12\x1c\n\x05\x66iles\x18\x03 \x03(\x0b\x32\r.manager.File\"A\n\x04\x46ile\x12\x0c\n\x04\x66ile\x18\x01 \x01(\t\x12+\n\nattributes\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"t\n\nAuthConfig\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x15\n\rregistry_host\x18\x03 \x01(\t\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x04 \x01(\t\x12\x15\n\rrefresh_token\x18\x05 \x01(\t2\xb0\x02\n\x11\x43ollectionManager\x12>\n\x0bListContent\x12\x15.manager.List.Request\x1a\x16.manager.List.Response\"\x00\x12G\n\x0ePublishContent\x12\x18.manager.Publish.Request\x1a\x19.manager.Publish.Response\"\x00\x12J\n\x0fRetrieveContent\x12\x19.manager.Retrieve.Request\x1a\x1a.manager.Retrieve.Response\"\x00\x12\x46\n\tReadLayer\x12\x1a.manager.ReadLayer.Request\x1a\x1b.manager.ReadLayer.Response\"\x00\x42IZGgithub.com/emporous/emporous-go/api/services/collectionmanager/v1alpha1b\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'manager_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'ZNgithub.com/uor-framework/uor-client-go/api/services/collectionmanager/v1alpha1'
+  DESCRIPTOR._serialized_options = b'ZGgithub.com/emporous/emporous-go/api/services/collectionmanager/v1alpha1'
   _DIAGNOSTIC._serialized_start=57
-  _DIAGNOSTIC._serialized_end=199
+  _DIAGNOSTIC._serialized_end=230
   _DIAGNOSTIC_SEVERITY._serialized_start=152
-  _DIAGNOSTIC_SEVERITY._serialized_end=199
-  _LIST._serialized_start=202
-  _LIST._serialized_end=406
-  _LIST_REQUEST._serialized_start=210
-  _LIST_REQUEST._serialized_end=311
-  _LIST_RESPONSE._serialized_start=313
-  _LIST_RESPONSE._serialized_end=406
-  _RETRIEVE._serialized_start=409
-  _RETRIEVE._serialized_end=614
-  _RETRIEVE_REQUEST._serialized_start=421
-  _RETRIEVE_REQUEST._serialized_end=543
-  _RETRIEVE_RESPONSE._serialized_start=545
-  _RETRIEVE_RESPONSE._serialized_end=614
-  _READLAYER._serialized_start=617
-  _READLAYER._serialized_end=780
-  _READLAYER_REQUEST._serialized_start=630
-  _READLAYER_REQUEST._serialized_end=711
-  _READLAYER_RESPONSE._serialized_start=713
-  _READLAYER_RESPONSE._serialized_end=780
-  _READLAYERSTREAM._serialized_start=783
-  _READLAYERSTREAM._serialized_end=1004
-  _READLAYERSTREAM_REQUEST._serialized_start=421
-  _READLAYERSTREAM_REQUEST._serialized_end=543
-  _READLAYERSTREAM_RESPONSE._serialized_start=926
-  _READLAYERSTREAM_RESPONSE._serialized_end=1004
-  _PUBLISH._serialized_start=1007
-  _PUBLISH._serialized_end=1210
-  _PUBLISH_REQUEST._serialized_start=1018
-  _PUBLISH_REQUEST._serialized_end=1140
-  _PUBLISH_RESPONSE._serialized_start=1142
-  _PUBLISH_RESPONSE._serialized_end=1210
-  _COLLECTION._serialized_start=1212
-  _COLLECTION._serialized_end=1306
-  _FILE._serialized_start=1308
-  _FILE._serialized_end=1373
-  _AUTHCONFIG._serialized_start=1375
-  _AUTHCONFIG._serialized_end=1492
-  _COLLECTIONMANAGER._serialized_start=1495
-  _COLLECTIONMANAGER._serialized_end=1799
+  _DIAGNOSTIC_SEVERITY._serialized_end=230
+  _LIST._serialized_start=233
+  _LIST._serialized_end=437
+  _LIST_REQUEST._serialized_start=241
+  _LIST_REQUEST._serialized_end=342
+  _LIST_RESPONSE._serialized_start=344
+  _LIST_RESPONSE._serialized_end=437
+  _RETRIEVE._serialized_start=440
+  _RETRIEVE._serialized_end=645
+  _RETRIEVE_REQUEST._serialized_start=452
+  _RETRIEVE_REQUEST._serialized_end=574
+  _RETRIEVE_RESPONSE._serialized_start=576
+  _RETRIEVE_RESPONSE._serialized_end=645
+  _READLAYER._serialized_start=648
+  _READLAYER._serialized_end=811
+  _READLAYER_REQUEST._serialized_start=661
+  _READLAYER_REQUEST._serialized_end=742
+  _READLAYER_RESPONSE._serialized_start=744
+  _READLAYER_RESPONSE._serialized_end=811
+  _READLAYERSTREAM._serialized_start=814
+  _READLAYERSTREAM._serialized_end=1035
+  _READLAYERSTREAM_REQUEST._serialized_start=452
+  _READLAYERSTREAM_REQUEST._serialized_end=574
+  _READLAYERSTREAM_RESPONSE._serialized_start=957
+  _READLAYERSTREAM_RESPONSE._serialized_end=1035
+  _PUBLISH._serialized_start=1038
+  _PUBLISH._serialized_end=1241
+  _PUBLISH_REQUEST._serialized_start=1049
+  _PUBLISH_REQUEST._serialized_end=1171
+  _PUBLISH_RESPONSE._serialized_start=1173
+  _PUBLISH_RESPONSE._serialized_end=1241
+  _COLLECTION._serialized_start=1243
+  _COLLECTION._serialized_end=1337
+  _FILE._serialized_start=1339
+  _FILE._serialized_end=1404
+  _AUTHCONFIG._serialized_start=1406
+  _AUTHCONFIG._serialized_end=1522
+  _COLLECTIONMANAGER._serialized_start=1525
+  _COLLECTIONMANAGER._serialized_end=1829
 # @@protoc_insertion_point(module_scope)

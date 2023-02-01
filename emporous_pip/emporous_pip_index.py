@@ -56,7 +56,7 @@ def create_auth_config(reference: str) -> manager_pb2.AuthConfig:
     creds = auth.resolve_authconfig(auth_configs, registry)
     if creds is not None:
         auth_config = manager_pb2.AuthConfig(
-            server_address=f"http://{registry}",
+            registry_host=f"http://{registry}",
             username=creds["username"],
             password=creds["password"],
         )
@@ -138,8 +138,8 @@ class EmporousPipHttpRequestHandler(http.server.BaseHTTPRequestHandler):
                 packages = set()
                 for file in files:
                     attributes = json_format.MessageToDict(file.attributes)
-                    if 'package' in attributes:
-                        packages.add(attributes['package'])
+                    if 'unknown' in attributes and 'package' in attributes['unknown']:
+                        packages.add(attributes['unknown']['package'])
 
                 for package in packages:
                     link = ET.Element('a', {'href': f'/simple/{package}/'})
@@ -195,10 +195,12 @@ class EmporousPipHttpRequestHandler(http.server.BaseHTTPRequestHandler):
 
                 for file in files:
                     attributes = json_format.MessageToDict(file.attributes)
-                    if 'package' not in attributes:
+                    if 'unknown' not in attributes:
                         continue
-                    title = attributes['org.opencontainers.image.title']
-                    package = attributes['package']
+                    if 'package' not in attributes['unknown']:
+                        continue
+                    title = attributes['converted']['org.opencontainers.image.title']
+                    package = attributes['unknown']['package']
                     digest = file.file
                     digest = digest.replace(':', '=')
                     print(file.attributes)
@@ -263,9 +265,9 @@ def normalize(name):
 
 
 async def open_grpc_server():
-    # grpc_server = subprocess.Popen(["uor", "serve", "--plain-http", os.environ['EMPOROUS_SOCKET_ADDRESS']], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    print(["uor", "serve", "--plain-http", os.environ['EMPOROUS_SOCKET_ADDRESS']])
-    grpc_server = subprocess.Popen(["uor", "serve", "--plain-http", os.environ['EMPOROUS_SOCKET_ADDRESS']],
+    # grpc_server = subprocess.Popen(["emporous", "serve", "--plain-http", os.environ['EMPOROUS_SOCKET_ADDRESS']], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    print(["emporous", "serve", "--plain-http", os.environ['EMPOROUS_SOCKET_ADDRESS']])
+    grpc_server = subprocess.Popen(["emporous", "serve", "--plain-http", os.environ['EMPOROUS_SOCKET_ADDRESS']],
                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, text=True)
     print("grpc server started")
     stdout, stderr = grpc_server.communicate()

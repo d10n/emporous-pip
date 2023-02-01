@@ -32,7 +32,7 @@ which -a vimetronome
 vimetronome --help
 
 # Mount our index collection as a filesystem
-uor-fuse-go mount --plain-http localhost:5000/demo/pyindex:latest /mnt &>/tmp/fuse.log &
+emporous-fuse mount --plain-http localhost:5000/demo/pyindex:latest /mnt &>/tmp/fuse.log &
 
 # Inspect the emporous metadata that is exposed by the mounted filesystem
 getfattr -d /mnt/iniconfig/iniconfig-1.1.1.tar.gz

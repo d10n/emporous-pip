@@ -8,18 +8,18 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AuthConfig(_message.Message):
-    __slots__ = ["access_token", "password", "refresh_token", "server_address", "username"]
+    __slots__ = ["access_token", "password", "refresh_token", "registry_host", "username"]
     ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
     PASSWORD_FIELD_NUMBER: _ClassVar[int]
     REFRESH_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    SERVER_ADDRESS_FIELD_NUMBER: _ClassVar[int]
+    REGISTRY_HOST_FIELD_NUMBER: _ClassVar[int]
     USERNAME_FIELD_NUMBER: _ClassVar[int]
     access_token: str
     password: str
     refresh_token: str
-    server_address: str
+    registry_host: str
     username: str
-    def __init__(self, username: _Optional[str] = ..., password: _Optional[str] = ..., server_address: _Optional[str] = ..., access_token: _Optional[str] = ..., refresh_token: _Optional[str] = ...) -> None: ...
+    def __init__(self, username: _Optional[str] = ..., password: _Optional[str] = ..., registry_host: _Optional[str] = ..., access_token: _Optional[str] = ..., refresh_token: _Optional[str] = ...) -> None: ...
 
 class Collection(_message.Message):
     __slots__ = ["files", "linked_collections", "schema_address"]
@@ -36,11 +36,11 @@ class Diagnostic(_message.Message):
     class Severity(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = []
     DETAIL_FIELD_NUMBER: _ClassVar[int]
-    ERROR: Diagnostic.Severity
-    INVALID: Diagnostic.Severity
+    SEVERITY_ERROR: Diagnostic.Severity
     SEVERITY_FIELD_NUMBER: _ClassVar[int]
+    SEVERITY_UNSPECIFIED: Diagnostic.Severity
+    SEVERITY_WARNING: Diagnostic.Severity
     SUMMARY_FIELD_NUMBER: _ClassVar[int]
-    WARNING: Diagnostic.Severity
     detail: str
     severity: Diagnostic.Severity
     summary: str

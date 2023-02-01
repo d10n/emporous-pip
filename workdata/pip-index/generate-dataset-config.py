@@ -9,7 +9,7 @@ from pkginfo2 import Wheel, SDist
 
 dataset_config = yaml.safe_load("""
 kind: DataSetConfiguration
-apiVersion: client.uor-framework.io/v1alpha1
+apiVersion: client.emporous.io/v1alpha1
 collection:
   files:
     - file: '*.whl'
@@ -21,7 +21,7 @@ collection:
 """)
 dataset_config = {
     'kind': 'DataSetConfiguration',
-    'apiVersion': 'client.uor-framework.io/v1alpha1',
+    'apiVersion': 'client.emporous.io/v1alpha1',
     'collection': {
         'files': [
             {
